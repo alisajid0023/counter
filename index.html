@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<style>
+    *,
+    *::after,
+    *::before {
+        padding: 0;
+        margin: 0;
+    }
+
+    html,
+    body {
+        height: 100%;
+    }
+
+    body {
+        background: rgb(70, 71, 70);
+    }
+
+    .container {
+        display: flex;
+
+    justify-content: center;
+   
+    margin-top: 25px;
+    }
+
+    .card-body {
+        background: rgb(0, 0, 0);
+        color: #ffffff;
+        padding: 25px;
+        border-radius: 15px;
+        text-align: center;
+        box-shadow: 2px 2px 20px black;
+    }
+
+    .card-body:hover {
+        background: rgb(52, 54, 54);
+        color: #fff;
+        transition: 1s;
+    }
+
+    .card-body h1 {
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        margin-bottom: 15px;
+        font-size: 70px;
+        cursor: pointer;
+    }
+
+    .card-btn button {
+        padding: 10px 35px;
+        color: #2f2424;
+        border: 0;
+        font-size: 15px;
+        font-weight: bold;
+        margin: 0 5px;
+        cursor: pointer;
+        transition: 0.5s;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+
+    button#decrement {
+        background: rgb(255, 255, 255);
+        color: black;
+        border-radius: 15px;
+        font-size: 23px;
+    }
+
+    button#decrement:hover {
+        background: rgb(0, 0, 0);
+        color: #fff;
+    }
+
+    button#reset {
+        background: #ffffff;
+        color: black;
+        border-radius: 15px;
+        font-size: 23px;
+    }
+
+    button#reset:hover {
+        background: #000000;
+        color: #ffff;
+    }
+
+    button#increment {
+        background: #ffffff;
+        color: black;
+        border-radius: 15px;
+        font-size: 23px;
+    }
+
+    button#increment:hover {
+        background: #000000;
+        color: #fff;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <div class="card-body">
+            <h1 id="title">0</h1>
+            <div class="card-btn">
+                <button id="decrement" class="btn">Decrease</button>
+                <button id="reset" class="btn">Reset</button>
+                <button id="increment" class="btn">Increase</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        const mainTitle = document.querySelector('#title');
+        let curValue = 0;
+        const btnDecrement = document.querySelector('#decrement');
+        const btnReset = document.querySelector('#reset');
+        const btnIncrement = document.querySelector('#increment');
+
+        btnIncrement.addEventListener("click", () => {
+            curValue++;
+            mainTitle.textContent = curValue;
+        })
+        btnDecrement.addEventListener("click", () => {
+            curValue--;
+            mainTitle.textContent = curValue;
+        })
+        btnReset.addEventListener("click", () => {
+            curValue = 0;
+            mainTitle.textContent = curValue;
+        })
+
+        document.getElementById("increment").addEventListener("keypress", function(event) {
+  if (event.key === "Enter") {
+    // Execute your code here when Enter key is pressed
+   
+  }
+});
+
+document.getElementById("decrement").addEventListener("keypress", function(event) {
+  if (event.key === "Enter") {
+    // Execute your code here when Enter key is pressed
+    
+  }
+});
+
+    </script>
+</body>
+
+</html>
